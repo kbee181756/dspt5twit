@@ -26,11 +26,11 @@ def list_books_for_humans():
 def new_book():
     return render_template("new_books.html")
 
-@book_routes.route("books/create", methods=["POST"])
+@book_routes.route("/books/create", methods=["POST"])
 def create_book():
     print("FORM DATA:", dict(request.form))
     return jsonify({
-        "message": "BOOK CREATED OK (TODO),"
+        "message": "BOOK CREATED OK (TODO)",
         "book": dict(request.form)
     })
     #flash(f"Book "{new_book.title}" created successfully!", "Success")

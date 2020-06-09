@@ -1,7 +1,10 @@
 from flask import Flask
 
+from web_app.model import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.book_routes import book_routes
+
+DATABASE_URI = "sqlite:///web_app_99.db"
 
 def create_app():
     app = Flask(__name__)
