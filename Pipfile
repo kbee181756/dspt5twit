@@ -11,6 +11,9 @@ requests = "*"
 basilica = "*"
 tweepy = "*"
 scikit-learn = "*"
+flask = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
 
 [requires]
 python_version = "3.7"
