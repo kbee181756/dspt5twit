@@ -8,8 +8,14 @@ DATABASE_URI = "sqlite:///web_app_99.db"
 
 def create_app():
     app = Flask(__name__)
+    
+    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
+    db.init_app(app)
+    migrate.init_app(app, db)
+
     app.register_blueprint(home_routes)
     app.register_blueprint(book_routes)
+    
     return app
 
 if __name__ == "__main__":

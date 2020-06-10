@@ -29,6 +29,10 @@ def new_book():
 @book_routes.route("/books/create", methods=["POST"])
 def create_book():
     print("FORM DATA:", dict(request.form))
+    #INSERT INTO BOOKS
+    new_book = Book(title=request.form['title'], author_id=request.form['author_name'])
+    db.session.add(new_book)
+    db.session.commit()
     return jsonify({
         "message": "BOOK CREATED OK (TODO)",
         "book": dict(request.form)
