@@ -1,6 +1,7 @@
 # web_app/routes/book_routes.py
 
 from flask import Blueprint, jsonify, request, render_template, flash, redirect
+from web_app.model import Book
 
 book_routes = Blueprint("book_routes", __name__)
 
